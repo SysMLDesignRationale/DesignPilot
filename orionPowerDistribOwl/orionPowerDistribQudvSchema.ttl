@@ -7,7 +7,7 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @base <http://example.org/orionPowerDistribution/qudvSchema> .
 
-<http://example.org/orionPowerDistribution/qudv> rdf:type owl:Ontology ;
+<http://example.org/orionPowerDistribution/qudvSchema> rdf:type owl:Ontology ;
 	rdfs:comment "A placeholder for a units ontology." .
 
 qudv:A rdf:type owl:NamedIndividual .

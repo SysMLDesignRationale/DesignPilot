@@ -1,0 +1,70 @@
+# baseURI: null
+
+@prefix composite:  <http://www.topbraid.org/2007/05/composite.owl#> .
+@prefix forms:   <http://www.topbraid.org/2007/01/forms.owl#> .
+@prefix inference:  <http://www.topbraid.org/2007/06/inference.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix visual:  <http://topbraid.org/visual#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+[]    rdf:type visual:Graph ;
+      rdfs:label "<http://example.org/orionPowerDistribution/lessonDb> Graph" ;
+      visual:child
+              [ rdf:type visual:Box ;
+                visual:depicts <http://example.org/orionPowerDistribution/lessonSchema> ;
+                visual:height "22"^^xsd:int ;
+                visual:width "156"^^xsd:int ;
+                visual:x "687"^^xsd:int ;
+                visual:y "13"^^xsd:int
+              ] ;
+      visual:child
+              [ rdf:type visual:Box ;
+                visual:depicts <http://example.org/orionPowerDistribution/sysmlSchema> ;
+                visual:height "22"^^xsd:int ;
+                visual:width "102"^^xsd:int ;
+                visual:x "716"^^xsd:int ;
+                visual:y "183"^^xsd:int
+              ] ;
+      visual:child
+              [ rdf:type visual:Box ;
+                visual:depicts <http://example.org/orionPowerDistribution/modelDb> ;
+                visual:height "22"^^xsd:int ;
+                visual:width "106"^^xsd:int ;
+                visual:x "207"^^xsd:int ;
+                visual:y "181"^^xsd:int
+              ] ;
+      visual:child
+              [ rdf:type visual:Box ;
+                visual:depicts <http://example.org/orionPowerDistribution/simSchema> ;
+                visual:height "22"^^xsd:int ;
+                visual:width "138"^^xsd:int ;
+                visual:x "697"^^xsd:int ;
+                visual:y "99"^^xsd:int
+              ] ;
+      visual:child
+              [ rdf:type visual:Box ;
+                visual:depicts <http://example.org/orionPowerDistribution/lessonDb> ;
+                visual:height "22"^^xsd:int ;
+                visual:width "435"^^xsd:int ;
+                visual:x "42"^^xsd:int ;
+                visual:y "14"^^xsd:int
+              ] ;
+      visual:child
+              [ rdf:type visual:Box ;
+                visual:depicts <http://example.org/orionPowerDistribution/qudvSchema> ;
+                visual:height "22"^^xsd:int ;
+                visual:width "96"^^xsd:int ;
+                visual:x "211"^^xsd:int ;
+                visual:y "254"^^xsd:int
+              ] ;
+      visual:child
+              [ rdf:type visual:Box ;
+                visual:depicts <http://example.org/orionPowerDistribution/simDb> ;
+                visual:height "22"^^xsd:int ;
+                visual:width "106"^^xsd:int ;
+                visual:x "206"^^xsd:int ;
+                visual:y "99"^^xsd:int
+              ] ;
+      visual:depicts <http://example.org/orionPowerDistribution/lessonDb> .

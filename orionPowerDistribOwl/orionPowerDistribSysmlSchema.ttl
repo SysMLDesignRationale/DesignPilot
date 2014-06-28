@@ -1,4 +1,4 @@
-# baseURI: http://example.org/orionPowerDistribution/sysml
+# baseURI: http://example.org/orionPowerDistribution/sysmlSchema
  
 @prefix :        <http://example.org/orionPowerDistribution/sysmlSchema#> . 
 @prefix sysML:   <http://example.org/orionPowerDistribution/sysmlSchema#> . 
