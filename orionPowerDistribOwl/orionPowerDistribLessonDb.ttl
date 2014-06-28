@@ -21,7 +21,7 @@
 lessonDb:Constr1
       rdf:type lessonSchema:Constraint ;
       lessonSchema:hasStatement
-              lessonSchema:Statement1 .
+              lessonDb:Statement1 .
 
 lessonDb:Over1
       rdf:type lessonSchema:ConstraintOverride ;
@@ -40,28 +40,28 @@ lessonDb:Rat1
               lessonSchema:RationaleType1 .
 
 lessonDb:Repl1
-      rdf:type lessonDb:Replacement ;
+      rdf:type lessonSchema:Replacement ;
       lessonSchema:replacesThis
               simDb:AS11 ;
       lessonSchema:replacesWith
               simDb:AS21 .
 
 lessonDb:Repl2
-      rdf:type lessonDb:Replacement ;
+      rdf:type lessonSchema:Replacement ;
       lessonSchema:replacesThis
               simDb:AS12 ;
       lessonSchema:replacesWith
               simDb:AS22 .
 
 lessonDb:Repl3
-      rdf:type lessonDb:Replacement ;
+      rdf:type lessonSchema:Replacement ;
       lessonSchema:replacesThis
               simDb:AS13 ;
       lessonSchema:replacesWith
               simDb:AS23 .
 
 lessonDb:Repl4
-      rdf:type lessonDb:Replacement ;
+      rdf:type lessonSchema:Replacement ;
       lessonSchema:replacesThis
               simDb:AS14 ;
       lessonSchema:replacesWith

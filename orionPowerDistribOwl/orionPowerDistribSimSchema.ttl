@@ -1,97 +1,31 @@
 # baseURI: http://example.org/orionPowerDistribution/simSchema
+# imports: http://example.org/orionPowerDistribution/sysmlSchema
 
-@prefix : <http://example.org/orionPowerDistribution/simSchema#> .
-@prefix sysML: <http://example.org/orionPowerDistribution/sysmlSchema#> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix xml: <http://www.w3.org/XML/1998/namespace> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@base <http://example.org/orionPowerDistribution/simSchema> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix simSchema:  <http://example.org/orionPowerDistribution/simSchema#> .
+@prefix sysML:   <http://example.org/orionPowerDistribution/sysmlSchema#> .
+@prefix xml:     <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
 
-<http://example.org/orionPowerDistribution/simSchema> rdf:type owl:Ontology ;
-                                                rdfs:comment "Ontology describing the interface to a design simulator." ;
-                                                    owl:imports <http://example.org/orionPowerDistribution/sysmlSchema> .
- 
+<http://example.org/orionPowerDistribution/simSchema>
+      rdf:type owl:Ontology ;
+      rdfs:comment "Ontology describing the interface to a design simulator." ;
+      owl:imports <http://example.org/orionPowerDistribution/sysmlSchema> .
 
-#################################################################
-#
-#    Object Properties
-#
-#################################################################
+simSchema:AttributeSet
+      rdf:type owl:Class ;
+      rdfs:comment "A set of SysML attributes." ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:allValuesFrom sysML:Attribute ;
+                owl:onProperty simSchema:contains
+              ] .
 
-
-###  http://example.org/orionPowerDistribution/simSchema#contains
-
-:contains rdf:type owl:ObjectProperty .
-
-
-
-###  http://example.org/orionPowerDistribution/simSchema#produces
-
-:produces rdf:type owl:ObjectProperty .
-
-
-
-###  http://example.org/orionPowerDistribution/simSchema#uses
-
-:uses rdf:type owl:ObjectProperty .
-
-
-
-
-
-#################################################################
-#
-#    Data properties
-#
-#################################################################
-
-
-###  http://example.org/orionPowerDistribution/simSchema#hasPriority
-
-:hasPriority rdf:type owl:DatatypeProperty ;
-             
-             rdfs:range xsd:integer .
-
-
-
-
-
-#################################################################
-#
-#    Classes
-#
-#################################################################
-
-
-###  http://example.org/orionPowerDistribution/simSchema#AttributeSet
-
-:AttributeSet rdf:type owl:Class ;
-              
-              rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                owl:onProperty :contains ;
-                                owl:allValuesFrom <http://example.org/orionPowerDistribution/sysmlSchema#Attribute>
-                              ] ;
-              
-              rdfs:comment "A set of SysML attributes." .
-
-
-
-###  http://example.org/orionPowerDistribution/simSchema#Computation
-
-:Computation rdf:type owl:Class ;
-             
-             rdfs:subClassOf [ rdf:type owl:Restriction ;
-                               owl:onProperty :produces ;
-                               owl:allValuesFrom <http://example.org/orionPowerDistribution/sysmlSchema#Attribute>
-                             ] ,
-                             [ rdf:type owl:Restriction ;
-                               owl:onProperty :uses ;
-                               owl:allValuesFrom :AttributeSet
-                             ] ;
-             
-             rdfs:comment """Represents the simulated computation of the value of a SysML attribute. Identifies the computed value through the property \"produces\", and one or more attribute sets through the property \"uses\".
+simSchema:Computation
+      rdf:type owl:Class ;
+      rdfs:comment """Represents the simulated computation of the value of a SysML attribute. Identifies the computed value through the property \"produces\", and one or more attribute sets through the property \"uses\".
 
 Each \"used\"  attribute set represents a set of leaf nodes in the functional computation tree: specifically, those leaf nodes that are used as arguments within a lowest-level operation.
 
@@ -99,10 +33,27 @@ This representation elides the actual tree of operations, as this kind of inform
 
 Multiple computations may share the same \"produced\" sysML attribute. Thus, a specific sysML attribute may have alternative computations defined for it. This is how we override a constraint violation: the rationale for the override becomes an alternative way to compute the value whose constraint has apparently been violated.
 
-The priority of the computation tells a simulation engine whether to use this computation or an alternative one that produces the same attribute. A computation with a higher priority value takes precedence over one with a lower priority value.""" .
+The priority of the computation tells a simulation engine whether to use this computation or an alternative one that produces the same attribute. A computation with a higher priority value takes precedence over one with a lower priority value.""" ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:allValuesFrom simSchema:AttributeSet ;
+                owl:onProperty simSchema:uses
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:allValuesFrom sysML:Attribute ;
+                owl:onProperty simSchema:produces
+              ] .
 
+simSchema:contains
+      rdf:type owl:ObjectProperty .
 
+simSchema:hasPriority
+      rdf:type owl:DatatypeProperty ;
+      rdfs:range xsd:integer .
 
+simSchema:produces
+      rdf:type owl:ObjectProperty .
 
-
-
+simSchema:uses
+      rdf:type owl:ObjectProperty .
