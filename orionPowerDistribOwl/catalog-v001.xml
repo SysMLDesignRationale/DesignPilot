@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="User Entered Import Resolution" name="http://example.org/orionPowerDistribution/sysmlSchema" uri="orionPowerDistribSysmlSchema.ttl"/>
+    <uri id="User Entered Import Resolution" name="http://example.org/orionPowerDistribution/qudvSchema" uri="orionPowerDistribQudvSchema.ttl"/>
+    <uri id="Imports Wizard Entry" name="http://example.org/orionPowerDistribution/modelDb" uri="orionPowerDistribModelDb.ttl"/>
+    <uri id="Imports Wizard Entry" name="http://example.org/orionPowerDistribution/lessonSchema" uri="orionPowerDistribLessonSchema.ttl"/>
+    <uri id="Imports Wizard Entry" name="http://example.org/orionPowerDistribution/lessonDb" uri="orionPowerDistribLessonDb.ttl"/>
+    <uri id="Imports Wizard Entry" name="http://example.org/orionPowerDistribution/simSchema" uri="orionPowerDistribSimSchema.ttl"/>
+    <uri id="Imports Wizard Entry" name="http://example.org/orionPowerDistribution/simDb" uri="orionPowerDistribSimDb.ttl"/>
+    <group id="Folder Repository, directory=, recursive=false, Auto-Update=true, version=2" prefer="public" xml:base="">
+        <uri id="Automatically generated entry, Timestamp=1403806436378" name="http://www.tietronix.com/Ontology/AO103B.owl" uri="AO1.15.owl"/>
+    </group>
+    <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
+        <uri id="Automatically generated entry, Timestamp=1399928404353" name="http://www.tietronix.com/Ontology/AO103B.owl" uri="AO1.15.owl"/>
+    </group>
+</catalog>

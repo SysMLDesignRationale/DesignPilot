@@ -1,0 +1,201 @@
+@prefix : <http://example.org/orionPowerDistribution/lessonSchema#> .
+@prefix lessonSchema: <http://example.org/orionPowerDistribution/lessonSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://example.org/orionPowerDistribution/lessonSchema> .
+
+<http://example.org/orionPowerDistribution/lessonSchema> rdf:type owl:Ontology ;
+                                                    
+                                                    owl:imports <http://example.org/orionPowerDistribution/simSchema> .
+
+
+#################################################################
+#
+#    Annotation properties
+#
+#################################################################
+
+
+###  http://www.w3.org/1999/02/22-rdf-syntax-ns#object
+
+rdf:object rdf:type owl:AnnotationProperty .
+
+
+
+
+
+#################################################################
+#
+#    Object Properties
+#
+#################################################################
+
+
+###  http://example.org/orionPowerDistribution/lessonSchema#hasActualValue
+
+:hasActualValue rdf:type owl:ObjectProperty .
+
+
+
+###  http://example.org/orionPowerDistribution/lessonSchema#hasLevel
+
+:hasLevel rdf:type owl:ObjectProperty .
+
+
+
+###  http://example.org/orionPowerDistribution/lessonSchema#hasRationale
+
+:hasRationale rdf:type owl:ObjectProperty .
+
+
+
+###  http://example.org/orionPowerDistribution/lessonSchema#hasReplacement
+
+:hasReplacement rdf:type owl:ObjectProperty .
+
+
+
+###  http://example.org/orionPowerDistribution/lessonSchema#hasStatement
+
+:hasStatement rdf:type owl:ObjectProperty .
+
+
+
+###  http://example.org/orionPowerDistribution/lessonSchema#hasType
+
+:hasType rdf:type owl:ObjectProperty .
+
+
+
+###  http://example.org/orionPowerDistribution/lessonSchema#overrides
+
+:overrides rdf:type owl:ObjectProperty .
+
+
+
+###  http://example.org/orionPowerDistribution/lessonSchema#replacesThis
+
+:replacesThis rdf:type owl:ObjectProperty .
+
+
+
+###  http://example.org/orionPowerDistribution/lessonSchema#replacesWith
+
+:replacesWith rdf:type owl:ObjectProperty .
+
+
+
+###  http://example.org/orionPowerDistribution/lessonSchema#violatesConstraint
+
+:violatesConstraint rdf:type owl:ObjectProperty .
+
+
+
+
+
+#################################################################
+#
+#    Classes
+#
+#################################################################
+
+
+###  http://example.org/orionPowerDistribution/lessonSchema#Constraint
+
+:Constraint rdf:type owl:Class ;
+            
+            rdfs:subClassOf [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasStatement ;
+                              owl:allValuesFrom rdf:Statement
+                            ] ;
+            
+            rdfs:comment "A constraint, represented as a set of RDF statements which must be true for the constraint to be met." .
+
+
+
+###  http://example.org/orionPowerDistribution/lessonSchema#ConstraintOverride
+
+:ConstraintOverride rdf:type owl:Class ;
+                    
+                    rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                      owl:onProperty :overrides ;
+                                      owl:allValuesFrom :ConstraintViolation
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :hasRationale ;
+                                      owl:allValuesFrom :Rationale
+                                    ] ;
+                    
+                    rdfs:comment "Represents a designer's decision to override a constraint violation, i.e., to accept the design despite the constraint violation. It refers to the constraint violation and to a rationale for the override." .
+
+
+
+###  http://example.org/orionPowerDistribution/lessonSchema#ConstraintViolation
+
+:ConstraintViolation rdf:type owl:Class ;
+                     
+                     rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                       owl:onProperty :hasStatement ;
+                                       owl:allValuesFrom rdf:Statement
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :violatesConstraint ;
+                                       owl:allValuesFrom :Constraint
+                                     ] ;
+                     
+                     rdfs:comment "A violation of a constraint, as discovered by a simulation engine or design analyzer. It refers to the constraint that is violated, and to the asserted or inferred statements that contradict the constraint's statements. It also has a severity level." .
+
+
+
+###  http://example.org/orionPowerDistribution/lessonSchema#Rationale
+
+:Rationale rdf:type owl:Class ;
+           
+           rdfs:subClassOf [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasType ;
+                             owl:allValuesFrom :RationaleType
+                           ] ;
+           
+           rdfs:comment "A rationale for a design decision. In particular, we can use these to justify overriding a constraint." .
+
+
+
+###  http://example.org/orionPowerDistribution/lessonSchema#RationaleType
+
+:RationaleType rdfs:comment """A recognized kind of rationale. 
+
+For starters, we have only one of these, namely, \"Actual values will differ,\" which means that the values used by a simulation engine to produce a constraint violation will not occur in practice.""" .
+
+
+
+###  http://example.org/orionPowerDistribution/lessonSchema#Replacement
+
+:Replacement rdf:type owl:Class ;
+             
+             rdfs:subClassOf [ rdf:type owl:Restriction ;
+                               owl:onProperty :replacesWith ;
+                               owl:allValuesFrom <http://example.org/orionPowerDistribution/sim#AttributeSet>
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :replacesThis ;
+                               owl:allValuesFrom <http://example.org/orionPowerDistribution/sim#AttributeSet>
+                             ] ;
+             
+             rdfs:comment """A replacement of one attribute set with another. 
+
+This can be used as part of a rationale of the type \"Actual values will differ\", to document the attributes that will, in practice, determine a particular attribute value -- as opposed to those the simlulation engine uses by default.""" .
+
+
+:RationaleType1		a			:RationaleType .
+:RationaleType1		rdfs:label		"Actual values will differ" .
+
+
+###  http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement
+
+rdf:Statement rdf:type owl:Class .
+
+
+

@@ -1,0 +1,99 @@
+# baseURI: http://example.org/orionPowerDistribution/sysml
+ 
+@prefix :        <http://example.org/orionPowerDistribution/sysmlSchema#> . 
+@prefix sysML:   <http://example.org/orionPowerDistribution/sysmlSchema#> . 
+@prefix owl:     <http://www.w3.org/2002/07/owl#> . 
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> . 
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> . 
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> . 
+
+<http://example.org/orionPowerDistribution/sysmlSchema> rdf:type owl:Ontology . 
+
+#
+# Properties
+#
+sysML:definesType	a	owl:ObjectProperty .
+
+sysML:inDiagram		a	owl:ObjectProperty .
+sysML:diagramContains	a	owl:ObjectProperty .
+sysML:diagramContains	owl:inverseOf	sysML:inDiagram .
+
+sysML:isInstanceOf 	a	owl:ObjectProperty .
+sysML:hasInstance 	a	owl:ObjectProperty .
+sysML:hasInstance 	owl:inverseOf	sysML:isInstanceOf .
+
+sysML:isPartOf 		a	owl:ObjectProperty .
+sysML:hasPart		a	owl:ObjectProperty .
+sysML:hasPart 		owl:inverseOf	sysML:isPartOf .
+
+sysML:from		a	owl:ObjectProperty .
+sysML:to		a	owl:ObjectProperty .
+sysML:hasDirection	a	owl:ObjectProperty .
+sysML:hasDirection	rdfs:range	sysML:Direction .
+sysML:hasType		a	owl:ObjectProperty .
+
+sysML:isAttributeOf	a	owl:ObjectProperty .
+sysML:hasAttribute	a	owl:ObjectProperty .
+sysML:hasAttribute	owl:inverseOf	sysML:isAttributeOf .
+
+sysML:hasPort 		a	owl:ObjectProperty .
+
+sysML:hasDefaultValue	a	owl:DatatypeProperty .
+sysML:redefines		a	owl:ObjectProperty .
+sysML:isDerived		a	owl:DatatypeProperty .
+sysML:isDerived		rdfs:range	xsd:boolean .
+sysML:isUnique		a	owl:DatatypeProperty .
+sysML:isUnique		rdfs:range	xsd:boolean .
+sysML:isService		a	owl:DatatypeProperty .
+sysML:isService		rdfs:range	xsd:boolean .
+sysML:isStatic		a	owl:DatatypeProperty .
+sysML:isStatic		rdfs:range	xsd:boolean .
+sysML:isNavigable	a	owl:DatatypeProperty .
+sysML:isNavigable	rdfs:range	xsd:boolean .
+sysML:hasVisibility	a	owl:DatatypeProperty .
+sysML:hasVisibility	rdfs:range	sysML:Visibility .
+
+#
+# Classes
+#
+sysML:Diagram			a		owl:Class .
+sysML:Diagram rdfs:comment "A sysML diagram." .
+sysML:PackageDiagram		a		owl:Class .
+sysML:PackageDiagram		rdfs:subClassOf	sysML:Diagram .
+sysML:PackageDiagram rdfs:comment "A sysML Package Diagram." .
+sysML:BlockDefinitionDiagram	a		owl:Class .
+sysML:BlockDefinitionDiagram	rdfs:subClassOf	sysML:Diagram .
+sysML:BlockDefinitionDiagram rdfs:comment "A sysML Block Definition Diagram." .
+sysML:InternalBlockDiagram	a		owl:Class .
+sysML:InternalBlockDiagram	rdfs:subClassOf	sysML:Diagram .
+sysML:InternalBlockDiagram rdfs:comment "A sysML Internal Block Diagram." .
+sysML:SubSystem			a		owl:Class .
+sysML:SubSystem rdfs:comment "A sysML subsystem." .
+sysML:ComponentBlock		a		owl:Class .
+sysML:ComponentBlock rdfs:comment "A SysML component block." .
+sysML:Attribute			a		owl:Class .
+sysML:Attribute rdfs:comment "A SysML attribute." .
+sysML:Port			a		owl:Class .
+sysML:Port rdfs:comment "A sysML port." .
+sysML:Connector			a		owl:Class .
+sysML:Connector rdfs:comment "A sysML connector." .
+sysML:Visibility		a		owl:Class .
+sysML:Visibility rdfs:comment "The sysML visibility attribute, indicating public or private." .
+sysML:Direction			a		owl:Class .
+sysML:Direction rdfs:comment "The direction (in or out) of a sysML port." .
+
+#
+# Enumerations
+#
+sysML:Public			a		sysML:Visibility .
+sysML:Private			a		sysML:Visibility .
+
+sysML:Input			a		sysML:Direction .
+sysML:Output			a		sysML:Direction .
+
+
+
+
+
+
+ 

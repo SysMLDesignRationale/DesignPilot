@@ -1,0 +1,94 @@
+@prefix :  	<http://example.org/orionPowerDistribution/lessonDb#> . 
+@prefix lessonDb: <http://example.org/orionPowerDistribution/lessonDb#> . 
+@prefix lessonSchema: <http://example.org/orionPowerDistribution/lessonSchema#> . 
+@prefix simSchema: <http://example.org/orionPowerDistribution/simSchema#> . 
+@prefix simDb: <http://example.org/orionPowerDistribution/simDb#> . 
+@prefix sysML:  <http://example.org/orionPowerDistribution/sysmlSchema#> . 
+@prefix model:  <http://example.org/orionPowerDistribution/model#> . 
+@prefix owl:    <http://www.w3.org/2002/07/owl#> . 
+@prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> . 
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> . 
+@prefix xsd:    <http://www.w3.org/2001/XMLSchema#> . 
+
+<http://example.org/orionPowerDistribution/lessonDb> 	rdf:type owl:Ontology ; 
+						owl:imports <http://example.org/orionPowerDistribution/lessonSchema> ;
+						owl:imports <http://example.org/orionPowerDistribution/simDb> .
+
+#
+# A constraint
+# 	A constraint may include a set of statements, but here we just use one,
+#	the assertion of default Power for DC_to_DC_Converter
+#
+
+lessonDb:Constr1		a			lessonSchema:Constraint .
+lessonDb:Constr1		lessonSchema:hasStatement		lessonSchema:Statement1 .
+
+lessonDb:Statement1		a			rdf:Statement .
+lessonDb:Statement1		rdf:subject		model:A4 .
+lessonDb:Statement1		rdf:predicate		sysML:hasDefaultValue .
+lessonDb:Statement1		rdf:object		"55"^^xsd:float .
+
+#
+# A constraint violation
+# 	A violation may consist of a set of statements, but here we just use one
+#
+
+lessonDb:Viol1			a			lessonSchema:ConstraintViolation .
+lessonDb:Viol1			lessonSchema:violatesConstraint	lessonDb:Constr1 .
+lessonDb:Viol1			lessonSchema:hasStatement		lessonDb:Statement2 .
+lessonDb:Viol1			lessonSchema:hasLevel		lessonSchema:Warning .
+lessonDb:Vio1			rdfs:comment		"This would be discovered by the simulation engine." .
+
+lessonDb:Statement2		a			rdf:Statement .
+lessonDb:Statement2		rdf:subject		model:A4 .
+lessonDb:Statement2		rdf:predicate		sysML:hasInferredValue .
+lessonDb:Statement2		rdf:object		"125.44"^^xsd:float .
+
+
+#
+# An override of a constraint violation
+#
+lessonDb:Over1			a			lessonSchema:ConstraintOverride .
+lessonDb:Over1			lessonSchema:overrides		lessonDb:Viol1 .
+lessonDb:Over1			lessonSchema:hasRationale		lessonDb:Rat1 .
+lessonDb:Over1			rdfs:comment		"This would be entered by the designer when informed of the constraint violation." .
+
+#
+# Rationale for the override
+#
+lessonDb:Rat1			a			lessonSchema:Rationale .
+lessonDb:Rat1			lessonSchema:hasType		lessonSchema:RationaleType1 .
+lessonDb:Rat1			rdfs:comment		"This would be entered by the designer when the system prompts her/him to justify the override." .
+
+#
+# Details of the rationale:
+#
+# 	Use the current and resistance from the loads themselves.
+#
+#	Since the violation refers to the Power attribute, the simulator is 
+#	being told to use the Current and Resistance of the Loads
+#	to compute Power, rather than the Current and Voltage from the RPCs.
+#
+lessonDb:Rat1			lessonSchema:hasReplacement		lessonDb:Repl1 .
+lessonDb:Rat1			lessonSchema:hasReplacement		lessonDb:Repl2 .
+lessonDb:Rat1			lessonSchema:hasReplacement		lessonDb:Repl3 .
+lessonDb:Rat1			lessonSchema:hasReplacement		lessonDb:Repl4 .
+
+lessonDb:Repl1			a			lessonDb:Replacement .
+lessonDb:Repl1			lessonSchema:replacesThis	simDb:AS11 .
+lessonDb:Repl1			lessonSchema:replacesWith	simDb:AS21 .
+
+lessonDb:Repl2			a			lessonDb:Replacement .
+lessonDb:Repl2			lessonSchema:replacesThis	simDb:AS12 .
+lessonDb:Repl2			lessonSchema:replacesWith	simDb:AS22 .
+
+lessonDb:Repl3			a			lessonDb:Replacement .
+lessonDb:Repl3			lessonSchema:replacesThis	simDb:AS13 .
+lessonDb:Repl3			lessonSchema:replacesWith	simDb:AS23 .
+
+lessonDb:Repl4			a			lessonDb:Replacement .
+lessonDb:Repl4			lessonSchema:replacesThis	simDb:AS14 .
+lessonDb:Repl4			lessonSchema:replacesWith	simDb:AS24 .
+
+
+
