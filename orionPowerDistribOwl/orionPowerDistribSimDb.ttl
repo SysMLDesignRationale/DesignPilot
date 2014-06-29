@@ -129,10 +129,10 @@
        
        simSchema:produces modelDb:A4 ;
        
-       simSchema:uses modelDb:AS11 ,
-             modelDb:AS12 ,
-             modelDb:AS13 ,
-             modelDb:AS14 .
+       simSchema:uses :AS11 ,
+             :AS12 ,
+             :AS13 ,
+             :AS14 .
 
 
 
@@ -148,10 +148,10 @@
        
        simSchema:produces modelDb:A4 ;
        
-       simSchema:uses modelDb:AS21 ,
-             modelDb:AS22 ,
-             modelDb:AS23 ,
-             modelDb:AS24 .
+       simSchema:uses :AS21 ,
+             :AS22 ,
+             :AS23 ,
+             :AS24 .
 
 
 
