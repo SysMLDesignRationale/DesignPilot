@@ -16,7 +16,7 @@
 
 <http://example.org/orionPowerDistribution/lessonDb>
       rdf:type owl:Ontology ;
-      owl:imports <http://example.org/orionPowerDistribution/simDb> , <http://example.org/orionPowerDistribution/lessonSchema> .
+      owl:imports <http://example.org/orionPowerDistribution/lessonSchema> , <http://example.org/orionPowerDistribution/simDb> .
 
 lessonDb:Constr1
       rdf:type lessonSchema:Constraint ;
@@ -35,7 +35,7 @@ lessonDb:Rat1
       rdf:type lessonSchema:Rationale ;
       rdfs:comment "This would be entered by the designer when the system prompts her/him to justify the override." ;
       lessonSchema:hasReplacement
-              lessonDb:Repl4 , lessonDb:Repl3 , lessonDb:Repl2 , lessonDb:Repl1 ;
+              lessonDb:Repl1 , lessonDb:Repl2 , lessonDb:Repl3 , lessonDb:Repl4 ;
       lessonSchema:hasType
               lessonSchema:RationaleType1 .
 

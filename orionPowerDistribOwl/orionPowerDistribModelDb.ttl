@@ -13,15 +13,15 @@
 @prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
 
 <http://example.org/orionPowerDistribution/model#A4>
-      rdf:type owl:NamedIndividual , sysML:Attribute .
+      rdf:type sysML:Attribute , owl:NamedIndividual .
 
 <http://example.org/orionPowerDistribution/modelDb>
       rdf:type owl:Ontology ;
       rdfs:comment "OWL Individuals corresponding to the Orion Power Distribution Sysml Model" ;
-      owl:imports <http://example.org/orionPowerDistribution/sysmlSchema> , <http://example.org/orionPowerDistribution/qudvSchema> .
+      owl:imports <http://example.org/orionPowerDistribution/qudvSchema> , <http://example.org/orionPowerDistribution/sysmlSchema> .
 
 model:A1
-      rdf:type sysML:Attribute , owl:NamedIndividual ;
+      rdf:type owl:NamedIndividual , sysML:Attribute ;
       rdfs:label "S1_Source_Current" ;
       sysML:hasType qudv:A ;
       sysML:hasVisibility sysML:Private ;
@@ -31,7 +31,7 @@ model:A1
       sysML:redefines model:A2 .
 
 model:A10
-      rdf:type sysML:Attribute , owl:NamedIndividual ;
+      rdf:type owl:NamedIndividual , sysML:Attribute ;
       rdfs:label "S1_Load_Resistance" ;
       sysML:hasDefaultValue
               "20.0"^^xsd:float ;
@@ -42,7 +42,7 @@ model:A10
       sysML:redefines model:A12 .
 
 model:A11
-      rdf:type sysML:Attribute , owl:NamedIndividual ;
+      rdf:type owl:NamedIndividual , sysML:Attribute ;
       rdfs:label "S1_Load_Current" ;
       sysML:hasType qudv:A ;
       sysML:hasVisibility sysML:Private ;
@@ -52,7 +52,7 @@ model:A11
       sysML:redefines model:A13 .
 
 model:A12
-      rdf:type sysML:Attribute , owl:NamedIndividual ;
+      rdf:type owl:NamedIndividual , sysML:Attribute ;
       rdfs:label "Load_Resistance" ;
       sysML:hasType qudv:Omega ;
       sysML:hasVisibility sysML:Private ;
@@ -64,7 +64,7 @@ model:A120
       sysML:isUnique "true"^^xsd:boolean .
 
 model:A13
-      rdf:type sysML:Attribute , owl:NamedIndividual ;
+      rdf:type owl:NamedIndividual , sysML:Attribute ;
       rdfs:label "Load_Current" ;
       sysML:hasType qudv:A ;
       sysML:hasVisibility sysML:Private ;
@@ -73,7 +73,7 @@ model:A13
       sysML:isUnique "true"^^xsd:boolean .
 
 model:A2
-      rdf:type sysML:Attribute , owl:NamedIndividual ;
+      rdf:type owl:NamedIndividual , sysML:Attribute ;
       rdfs:label "DC_to_DC_Converter_Current" ;
       sysML:hasType qudv:A ;
       sysML:hasVisibility sysML:Private ;
@@ -82,7 +82,7 @@ model:A2
       sysML:isUnique "true"^^xsd:boolean .
 
 model:A21
-      rdf:type sysML:Attribute , owl:NamedIndividual ;
+      rdf:type owl:NamedIndividual , sysML:Attribute ;
       rdfs:label "S2_Source_Current" ;
       sysML:hasType qudv:A ;
       sysML:hasVisibility sysML:Private ;
@@ -92,7 +92,7 @@ model:A21
       sysML:redefines model:A13 .
 
 model:A210
-      rdf:type sysML:Attribute , owl:NamedIndividual ;
+      rdf:type owl:NamedIndividual , sysML:Attribute ;
       rdfs:label "S2_Load_Resistance" ;
       sysML:hasDefaultValue
               "15.0"^^xsd:float ;
@@ -102,7 +102,7 @@ model:A210
       sysML:redefines model:A12 .
 
 model:A211
-      rdf:type sysML:Attribute , owl:NamedIndividual ;
+      rdf:type owl:NamedIndividual , sysML:Attribute ;
       rdfs:label "S2_Load_Current" ;
       sysML:hasType qudv:A ;
       sysML:hasVisibility sysML:Private ;
@@ -112,7 +112,7 @@ model:A211
       sysML:redefines model:A13 .
 
 model:A25
-      rdf:type sysML:Attribute , owl:NamedIndividual ;
+      rdf:type owl:NamedIndividual , sysML:Attribute ;
       rdfs:label "S2_RPC_Current" ;
       sysML:hasType qudv:A ;
       sysML:hasVisibility sysML:Private ;
@@ -122,7 +122,7 @@ model:A25
       sysML:redefines model:A7 .
 
 model:A26
-      rdf:type sysML:Attribute , owl:NamedIndividual ;
+      rdf:type owl:NamedIndividual , sysML:Attribute ;
       rdfs:label "S2_RPC_Current_Limit" ;
       sysML:hasType qudv:A ;
       sysML:hasVisibility sysML:Private ;
@@ -141,7 +141,7 @@ model:A3
       sysML:isUnique "true"^^xsd:boolean .
 
 model:A321
-      rdf:type sysML:Attribute , owl:NamedIndividual ;
+      rdf:type owl:NamedIndividual , sysML:Attribute ;
       rdfs:label "S3_Source_Current" ;
       sysML:hasType qudv:A ;
       sysML:hasVisibility sysML:Private ;
@@ -151,7 +151,7 @@ model:A321
       sysML:redefines model:A2 .
 
 model:A3251
-      rdf:type sysML:Attribute , owl:NamedIndividual ;
+      rdf:type owl:NamedIndividual , sysML:Attribute ;
       rdfs:label "S3_RPC1_Current" ;
       sysML:hasType qudv:A ;
       sysML:hasVisibility sysML:Private ;
@@ -161,7 +161,7 @@ model:A3251
       sysML:redefines model:A7 .
 
 model:A3252
-      rdf:type sysML:Attribute , owl:NamedIndividual ;
+      rdf:type owl:NamedIndividual , sysML:Attribute ;
       rdfs:label "S3_RPC2_Current" ;
       sysML:hasType qudv:A ;
       sysML:hasVisibility sysML:Private ;
@@ -171,7 +171,7 @@ model:A3252
       sysML:redefines model:A7 .
 
 model:A3253
-      rdf:type sysML:Attribute , owl:NamedIndividual ;
+      rdf:type owl:NamedIndividual , sysML:Attribute ;
       rdfs:label "S3_RPC3_Current" ;
       sysML:hasType qudv:A ;
       sysML:hasVisibility sysML:Private ;
@@ -181,7 +181,7 @@ model:A3253
       sysML:redefines model:A7 .
 
 model:A3254
-      rdf:type sysML:Attribute , owl:NamedIndividual ;
+      rdf:type owl:NamedIndividual , sysML:Attribute ;
       rdfs:label "S3_RPC4_Current" ;
       sysML:hasType qudv:A ;
       sysML:hasVisibility sysML:Private ;
@@ -191,7 +191,7 @@ model:A3254
       sysML:redefines model:A7 .
 
 model:A3261
-      rdf:type sysML:Attribute , owl:NamedIndividual ;
+      rdf:type owl:NamedIndividual , sysML:Attribute ;
       rdfs:label "S3_RPC1_Current_Limit" ;
       sysML:hasType qudv:A ;
       sysML:hasVisibility sysML:Private ;
@@ -200,7 +200,7 @@ model:A3261
       sysML:redefines model:A9 .
 
 model:A3262
-      rdf:type sysML:Attribute , owl:NamedIndividual ;
+      rdf:type owl:NamedIndividual , sysML:Attribute ;
       rdfs:label "S3_RPC2_Current_Limit" ;
       sysML:hasType qudv:A ;
       sysML:hasVisibility sysML:Private ;
@@ -209,7 +209,7 @@ model:A3262
       sysML:redefines model:A9 .
 
 model:A3263
-      rdf:type sysML:Attribute , owl:NamedIndividual ;
+      rdf:type owl:NamedIndividual , sysML:Attribute ;
       rdfs:label "S3_RPC3_Current_Limit" ;
       sysML:hasType qudv:A ;
       sysML:hasVisibility sysML:Private ;
@@ -218,7 +218,7 @@ model:A3263
       sysML:redefines model:A9 .
 
 model:A3264
-      rdf:type sysML:Attribute , owl:NamedIndividual ;
+      rdf:type owl:NamedIndividual , sysML:Attribute ;
       rdfs:label "S3_RPC4_Current_Limit" ;
       sysML:hasType qudv:A ;
       sysML:hasVisibility sysML:Private ;
@@ -227,7 +227,7 @@ model:A3264
       sysML:redefines model:A9 .
 
 model:A3301
-      rdf:type sysML:Attribute , owl:NamedIndividual ;
+      rdf:type owl:NamedIndividual , sysML:Attribute ;
       rdfs:label "S3_Load1_Resistance" ;
       sysML:hasDefaultValue
               "15.0"^^xsd:float ;
@@ -238,7 +238,7 @@ model:A3301
       sysML:redefines model:A12 .
 
 model:A3302
-      rdf:type sysML:Attribute , owl:NamedIndividual ;
+      rdf:type owl:NamedIndividual , sysML:Attribute ;
       rdfs:label "S3_Load2_Resistance" ;
       sysML:hasDefaultValue
               "15.0"^^xsd:float ;
@@ -249,7 +249,7 @@ model:A3302
       sysML:redefines model:A12 .
 
 model:A3303
-      rdf:type sysML:Attribute , owl:NamedIndividual ;
+      rdf:type owl:NamedIndividual , sysML:Attribute ;
       rdfs:label "S3_Load3_Resistance" ;
       sysML:hasDefaultValue
               "15.0"^^xsd:float ;
@@ -260,7 +260,7 @@ model:A3303
       sysML:redefines model:A12 .
 
 model:A3304
-      rdf:type sysML:Attribute , owl:NamedIndividual ;
+      rdf:type owl:NamedIndividual , sysML:Attribute ;
       rdfs:label "S3_Load4_Resistance" ;
       sysML:hasDefaultValue
               "15.0"^^xsd:float ;
@@ -271,7 +271,7 @@ model:A3304
       sysML:redefines model:A12 .
 
 model:A3311
-      rdf:type sysML:Attribute , owl:NamedIndividual ;
+      rdf:type owl:NamedIndividual , sysML:Attribute ;
       rdfs:label "S3_Load1_Current" ;
       sysML:hasType qudv:A ;
       sysML:hasVisibility sysML:Private ;
@@ -281,7 +281,7 @@ model:A3311
       sysML:redefines model:A13 .
 
 model:A3312
-      rdf:type sysML:Attribute , owl:NamedIndividual ;
+      rdf:type owl:NamedIndividual , sysML:Attribute ;
       rdfs:label "S3_Load2_Current" ;
       sysML:hasType qudv:A ;
       sysML:hasVisibility sysML:Private ;
@@ -291,7 +291,7 @@ model:A3312
       sysML:redefines model:A13 .
 
 model:A3313
-      rdf:type sysML:Attribute , owl:NamedIndividual ;
+      rdf:type owl:NamedIndividual , sysML:Attribute ;
       rdfs:label "S3_Load3_Current" ;
       sysML:hasType qudv:A ;
       sysML:hasVisibility sysML:Private ;
@@ -301,7 +301,7 @@ model:A3313
       sysML:redefines model:A13 .
 
 model:A3314
-      rdf:type sysML:Attribute , owl:NamedIndividual ;
+      rdf:type owl:NamedIndividual , sysML:Attribute ;
       rdfs:label "S3_Load4_Current" ;
       sysML:hasType qudv:A ;
       sysML:hasVisibility sysML:Private ;
@@ -311,7 +311,7 @@ model:A3314
       sysML:redefines model:A13 .
 
 model:A4
-      rdf:type sysML:Attribute , owl:NamedIndividual ;
+      rdf:type owl:NamedIndividual , sysML:Attribute ;
       rdfs:label "DC_to_DC_Converter_Power" ;
       sysML:hasDefaultValue
               "55.0"^^xsd:float ;
@@ -321,7 +321,7 @@ model:A4
       sysML:isUnique "true"^^xsd:boolean .
 
 model:A5
-      rdf:type sysML:Attribute , owl:NamedIndividual ;
+      rdf:type owl:NamedIndividual , sysML:Attribute ;
       rdfs:label "S1_RPC_Current" ;
       sysML:hasType qudv:A ;
       sysML:hasVisibility sysML:Private ;
@@ -331,7 +331,7 @@ model:A5
       sysML:redefines model:A7 .
 
 model:A6
-      rdf:type sysML:Attribute , owl:NamedIndividual ;
+      rdf:type owl:NamedIndividual , sysML:Attribute ;
       rdfs:label "S1_RPC_Current_Limit" ;
       sysML:hasType qudv:A ;
       sysML:hasVisibility sysML:Private ;
@@ -340,7 +340,7 @@ model:A6
       sysML:redefines model:A9 .
 
 model:A7
-      rdf:type sysML:Attribute , owl:NamedIndividual ;
+      rdf:type owl:NamedIndividual , sysML:Attribute ;
       rdfs:label "RPC_Current" ;
       sysML:hasType qudv:A ;
       sysML:hasVisibility sysML:Private ;
@@ -349,7 +349,7 @@ model:A7
       sysML:isUnique "true"^^xsd:boolean .
 
 model:A8
-      rdf:type sysML:Attribute , owl:NamedIndividual ;
+      rdf:type owl:NamedIndividual , sysML:Attribute ;
       rdfs:label "RPC_Voltage" ;
       sysML:hasType qudv:V ;
       sysML:hasVisibility sysML:Private ;
@@ -357,7 +357,7 @@ model:A8
       sysML:isUnique "true"^^xsd:boolean .
 
 model:A9
-      rdf:type sysML:Attribute , owl:NamedIndividual ;
+      rdf:type owl:NamedIndividual , sysML:Attribute ;
       rdfs:label "RPC_Current_Limit" ;
       sysML:hasDefaultValue
               "1.5"^^xsd:float ;
@@ -367,112 +367,112 @@ model:A9
       sysML:isUnique "true"^^xsd:boolean .
 
 model:C41
-      rdf:type sysML:Connector , owl:NamedIndividual ;
+      rdf:type owl:NamedIndividual , sysML:Connector ;
       rdfs:label "S1_Source_to_RPC" ;
       sysML:from model:P4 ;
       sysML:to model:P5 .
 
 model:C42
-      rdf:type sysML:Connector , owl:NamedIndividual ;
+      rdf:type owl:NamedIndividual , sysML:Connector ;
       rdfs:label "S1_RPC_to_Load" ;
       sysML:from model:P6 ;
       sysML:to model:P7 .
 
 model:C51
-      rdf:type sysML:Connector , owl:NamedIndividual ;
+      rdf:type owl:NamedIndividual , sysML:Connector ;
       rdfs:label "S2_Source_to_RPC" ;
       sysML:from model:P8 ;
       sysML:to model:P9 .
 
 model:C52
-      rdf:type sysML:Connector , owl:NamedIndividual ;
+      rdf:type owl:NamedIndividual , sysML:Connector ;
       rdfs:label "S2_RPC_to_Load" ;
       sysML:from model:P10 ;
       sysML:to model:P11 .
 
 model:C6111
-      rdf:type sysML:Connector , owl:NamedIndividual ;
+      rdf:type owl:NamedIndividual , sysML:Connector ;
       rdfs:label "S3_Source_to_RPC_1" ;
       sysML:from <http://example.org/orionPowerDistribution/modelDb#P8.1> ;
       sysML:to <http://example.org/orionPowerDistribution/modelDb#P9.1.1> .
 
 model:C6112
-      rdf:type sysML:Connector , owl:NamedIndividual ;
+      rdf:type owl:NamedIndividual , sysML:Connector ;
       rdfs:label "S3_Source_to_RPC_2" ;
       sysML:from <http://example.org/orionPowerDistribution/modelDb#P8.1> ;
       sysML:to <http://example.org/orionPowerDistribution/modelDb#P9.1.2> .
 
 model:C6113
-      rdf:type sysML:Connector , owl:NamedIndividual ;
+      rdf:type owl:NamedIndividual , sysML:Connector ;
       rdfs:label "S3_Source_to_RPC_3" ;
       sysML:from <http://example.org/orionPowerDistribution/modelDb#P8.1> ;
       sysML:to <http://example.org/orionPowerDistribution/modelDb#P9.1.3> .
 
 model:C6114
-      rdf:type sysML:Connector , owl:NamedIndividual ;
+      rdf:type owl:NamedIndividual , sysML:Connector ;
       rdfs:label "S3_Source_to_RPC_4" ;
       sysML:from <http://example.org/orionPowerDistribution/modelDb#P8.1> ;
       sysML:to <http://example.org/orionPowerDistribution/modelDb#P9.1.4> .
 
 model:C7111
-      rdf:type sysML:Connector , owl:NamedIndividual ;
+      rdf:type owl:NamedIndividual , sysML:Connector ;
       rdfs:label "S3_RPC_to_Load_1" ;
       sysML:from <http://example.org/orionPowerDistribution/modelDb#P10.1.1> ;
       sysML:to <http://example.org/orionPowerDistribution/modelDb#P11.1.1> .
 
 model:C7112
-      rdf:type sysML:Connector , owl:NamedIndividual ;
+      rdf:type owl:NamedIndividual , sysML:Connector ;
       rdfs:label "S3_RPC_to_Load_2" ;
       sysML:from <http://example.org/orionPowerDistribution/modelDb#P10.1.2> ;
       sysML:to <http://example.org/orionPowerDistribution/modelDb#P11.1.2> .
 
 model:C7113
-      rdf:type sysML:Connector , owl:NamedIndividual ;
+      rdf:type owl:NamedIndividual , sysML:Connector ;
       rdfs:label "S3_RPC_to_Load_3" ;
       sysML:from <http://example.org/orionPowerDistribution/modelDb#P10.1.3> ;
       sysML:to <http://example.org/orionPowerDistribution/modelDb#P11.1.3> .
 
 model:C7114
-      rdf:type sysML:Connector , owl:NamedIndividual ;
+      rdf:type owl:NamedIndividual , sysML:Connector ;
       rdfs:label "S3_RPC_to_Load_4" ;
       sysML:from <http://example.org/orionPowerDistribution/modelDb#P10.1.4> ;
       sysML:to <http://example.org/orionPowerDistribution/modelDb#P11.1.4> .
 
 model:D0
-      rdf:type sysML:PackageDiagram , owl:NamedIndividual ;
+      rdf:type owl:NamedIndividual , sysML:PackageDiagram ;
       rdfs:label "Overview" .
 
 model:D1
-      rdf:type sysML:BlockDefinitionDiagram , owl:NamedIndividual ;
+      rdf:type owl:NamedIndividual , sysML:BlockDefinitionDiagram ;
       rdfs:label "Orion Power Distribution_Scenario1" .
 
 model:D2
-      rdf:type sysML:BlockDefinitionDiagram , owl:NamedIndividual ;
+      rdf:type owl:NamedIndividual , sysML:BlockDefinitionDiagram ;
       rdfs:label "Orion Power Distribution_Scenario2" .
 
 model:D3
-      rdf:type sysML:BlockDefinitionDiagram , owl:NamedIndividual ;
+      rdf:type owl:NamedIndividual , sysML:BlockDefinitionDiagram ;
       rdfs:label "Orion Power Distribution_Scenario3" .
 
 model:D4
-      rdf:type sysML:InternalBlockDiagram , owl:NamedIndividual ;
+      rdf:type owl:NamedIndividual , sysML:InternalBlockDiagram ;
       rdfs:label "S1_Orion Power Distribution System" .
 
 model:D5
-      rdf:type sysML:InternalBlockDiagram , owl:NamedIndividual ;
+      rdf:type owl:NamedIndividual , sysML:InternalBlockDiagram ;
       rdfs:label "S2_Orion Power Distribution System" .
 
 model:D6
-      rdf:type sysML:InternalBlockDiagram , owl:NamedIndividual ;
+      rdf:type owl:NamedIndividual , sysML:InternalBlockDiagram ;
       rdfs:label "S3_Orion Power Distribution System" .
 
 model:N1
-      rdf:type sysML:SubSystem , owl:NamedIndividual ;
+      rdf:type owl:NamedIndividual , sysML:SubSystem ;
       rdfs:label "S1_Orion Power Distribution System" ;
       sysML:inDiagram model:D1 .
 
 model:N10
-      rdf:type sysML:ComponentBlock , owl:NamedIndividual ;
+      rdf:type owl:NamedIndividual , sysML:ComponentBlock ;
       rdfs:label "S2_Source" ;
       sysML:definesType model:S2_Source ;
       sysML:inDiagram model:D2 ;
@@ -480,7 +480,7 @@ model:N10
       sysML:isPartOf model:N2 .
 
 model:N12
-      rdf:type sysML:ComponentBlock , owl:NamedIndividual ;
+      rdf:type owl:NamedIndividual , sysML:ComponentBlock ;
       rdfs:label "S2_RPC" ;
       sysML:definesType model:S2_RPC ;
       sysML:inDiagram model:D2 ;
@@ -488,7 +488,7 @@ model:N12
       sysML:isPartOf model:N2 .
 
 model:N14
-      rdf:type sysML:ComponentBlock , owl:NamedIndividual ;
+      rdf:type owl:NamedIndividual , sysML:ComponentBlock ;
       rdfs:label "S2_Load" ;
       sysML:definesType model:S2_Load ;
       sysML:inDiagram model:D2 ;
@@ -496,17 +496,17 @@ model:N14
       sysML:isPartOf model:N2 .
 
 model:N2
-      rdf:type sysML:SubSystem , owl:NamedIndividual ;
+      rdf:type owl:NamedIndividual , sysML:SubSystem ;
       rdfs:label "S2_Orion Power Distribution System" ;
       sysML:inDiagram model:D2 .
 
 model:N3
-      rdf:type sysML:SubSystem , owl:NamedIndividual ;
+      rdf:type owl:NamedIndividual , sysML:SubSystem ;
       rdfs:label "S3_Orion Power Distribution System" ;
       sysML:inDiagram model:D3 .
 
 model:N310
-      rdf:type sysML:ComponentBlock , owl:NamedIndividual ;
+      rdf:type owl:NamedIndividual , sysML:ComponentBlock ;
       rdfs:label "S3_Source" ;
       sysML:definesType model:S3_Source ;
       sysML:inDiagram model:D3 ;
@@ -514,7 +514,7 @@ model:N310
       sysML:isPartOf model:N3 .
 
 model:N3121
-      rdf:type sysML:ComponentBlock , owl:NamedIndividual ;
+      rdf:type owl:NamedIndividual , sysML:ComponentBlock ;
       rdfs:label "S3_RPC1" ;
       sysML:definesType model:S3_RPC1 ;
       sysML:inDiagram model:D3 ;
@@ -522,7 +522,7 @@ model:N3121
       sysML:isPartOf model:N3 .
 
 model:N3122
-      rdf:type sysML:ComponentBlock , owl:NamedIndividual ;
+      rdf:type owl:NamedIndividual , sysML:ComponentBlock ;
       rdfs:label "S3_RPC2" ;
       sysML:definesType model:S3_RPC2 ;
       sysML:inDiagram model:D3 ;
@@ -530,7 +530,7 @@ model:N3122
       sysML:isPartOf model:N3 .
 
 model:N3123
-      rdf:type sysML:ComponentBlock , owl:NamedIndividual ;
+      rdf:type owl:NamedIndividual , sysML:ComponentBlock ;
       rdfs:label "S3_RPC3" ;
       sysML:definesType model:S3_RPC3 ;
       sysML:inDiagram model:D3 ;
@@ -538,7 +538,7 @@ model:N3123
       sysML:isPartOf model:N3 .
 
 model:N3124
-      rdf:type sysML:ComponentBlock , owl:NamedIndividual ;
+      rdf:type owl:NamedIndividual , sysML:ComponentBlock ;
       rdfs:label "S3_RPC4" ;
       sysML:definesType model:S3_RPC4 ;
       sysML:inDiagram model:D3 ;
@@ -546,28 +546,28 @@ model:N3124
       sysML:isPartOf model:N3 .
 
 model:N3141
-      rdf:type sysML:ComponentBlock , owl:NamedIndividual ;
+      rdf:type owl:NamedIndividual , sysML:ComponentBlock ;
       rdfs:label "S3_Load_1" ;
       sysML:definesType model:S3_Load_1 ;
       sysML:inDiagram model:D3 ;
       sysML:isPartOf model:N3 .
 
 model:N3142
-      rdf:type sysML:ComponentBlock , owl:NamedIndividual ;
+      rdf:type owl:NamedIndividual , sysML:ComponentBlock ;
       rdfs:label "S3_Load_2" ;
       sysML:definesType model:S3_Load_2 ;
       sysML:inDiagram model:D3 ;
       sysML:isPartOf model:N3 .
 
 model:N3143
-      rdf:type sysML:ComponentBlock , owl:NamedIndividual ;
+      rdf:type owl:NamedIndividual , sysML:ComponentBlock ;
       rdfs:label "S3_Load_3" ;
       sysML:definesType model:S3_Load_3 ;
       sysML:inDiagram model:D3 ;
       sysML:isPartOf model:N3 .
 
 model:N3144
-      rdf:type sysML:ComponentBlock , owl:NamedIndividual ;
+      rdf:type owl:NamedIndividual , sysML:ComponentBlock ;
       rdfs:label "S3_Load_4" ;
       sysML:definesType model:S3_Load_4 ;
       sysML:inDiagram model:D3 ;
@@ -575,7 +575,7 @@ model:N3144
       sysML:isPartOf model:N3 .
 
 model:N4
-      rdf:type sysML:ComponentBlock , owl:NamedIndividual ;
+      rdf:type owl:NamedIndividual , sysML:ComponentBlock ;
       rdfs:label "S1_Source" ;
       sysML:definesType model:S1_Source ;
       sysML:inDiagram model:D1 ;
@@ -583,7 +583,7 @@ model:N4
       sysML:isPartOf model:N1 .
 
 <http://example.org/orionPowerDistribution/modelDb#N4.1>
-      rdf:type owl:NamedIndividual ;
+      rdf:type sysML:ComponentBlock ;
       sysML:hasPort model:P4 ;
       sysML:hasType model:S1_Source ;
       sysML:inDiagram model:D4 ;
@@ -591,20 +591,20 @@ model:N4
       sysML:isStatic "true"^^xsd:boolean .
 
 model:N5
-      rdf:type sysML:ComponentBlock , owl:NamedIndividual ;
+      rdf:type owl:NamedIndividual , sysML:ComponentBlock ;
       rdfs:label "DC_to_DC_Converter" ;
-      sysML:inDiagram model:D1 , model:D2 , model:D3 .
+      sysML:inDiagram model:D3 , model:D2 , model:D1 .
 
 <http://example.org/orionPowerDistribution/modelDb#N5.1>
-      rdf:type owl:NamedIndividual ;
-      sysML:hasPort model:P8 , <http://example.org/orionPowerDistribution/modelDb#P8.1> ;
+      rdf:type sysML:ComponentBlock ;
+      sysML:hasPort <http://example.org/orionPowerDistribution/modelDb#P8.1> , model:P8 ;
       sysML:hasType model:S2_Source , model:S3_Source ;
-      sysML:inDiagram model:D5 , model:D6 ;
+      sysML:inDiagram model:D6 , model:D5 ;
       sysML:isNavigable "true"^^xsd:boolean ;
       sysML:isStatic "true"^^xsd:boolean .
 
 model:N6
-      rdf:type sysML:ComponentBlock , owl:NamedIndividual ;
+      rdf:type owl:NamedIndividual , sysML:ComponentBlock ;
       rdfs:label "S1_RPC" ;
       sysML:definesType model:S1_RPC ;
       sysML:inDiagram model:D1 ;
@@ -612,48 +612,48 @@ model:N6
       sysML:isPartOf model:N1 .
 
 <http://example.org/orionPowerDistribution/modelDb#N6.1>
-      rdf:type owl:NamedIndividual ;
-      sysML:hasPort model:P5 , model:P6 ;
+      rdf:type sysML:ComponentBlock ;
+      sysML:hasPort model:P6 , model:P5 ;
       sysML:hasType model:S1_RPC1 ;
       sysML:inDiagram model:D4 .
 
 model:N7
-      rdf:type sysML:ComponentBlock , owl:NamedIndividual ;
+      rdf:type owl:NamedIndividual , sysML:ComponentBlock ;
       rdfs:label "RPC" ;
       sysML:inDiagram model:D1 .
 
 <http://example.org/orionPowerDistribution/modelDb#N7.1>
-      rdf:type owl:NamedIndividual ;
-      sysML:hasPort model:P10 , model:P9 ;
+      rdf:type sysML:ComponentBlock ;
+      sysML:hasPort model:P9 , model:P10 ;
       sysML:hasType model:S2_RPC1 ;
       sysML:inDiagram model:D5 .
 
 <http://example.org/orionPowerDistribution/modelDb#N7.1.1>
-      rdf:type owl:NamedIndividual ;
-      sysML:hasPort <http://example.org/orionPowerDistribution/modelDb#P10.1> , <http://example.org/orionPowerDistribution/modelDb#P9.1> ;
+      rdf:type sysML:ComponentBlock ;
+      sysML:hasPort <http://example.org/orionPowerDistribution/modelDb#P9.1> , <http://example.org/orionPowerDistribution/modelDb#P10.1> ;
       sysML:hasType model:S3_RPC1 ;
       sysML:inDiagram model:D5 .
 
 <http://example.org/orionPowerDistribution/modelDb#N7.1.2>
-      rdf:type owl:NamedIndividual ;
-      sysML:hasPort <http://example.org/orionPowerDistribution/modelDb#P10.2> , <http://example.org/orionPowerDistribution/modelDb#P9.2> ;
-      sysML:hasType model:S3_RPC1 ;
+      rdf:type sysML:ComponentBlock ;
+      sysML:hasPort <http://example.org/orionPowerDistribution/modelDb#P9.2> , <http://example.org/orionPowerDistribution/modelDb#P10.2> ;
+      sysML:hasType model:S3_RPC2 ;
       sysML:inDiagram model:D5 .
 
 <http://example.org/orionPowerDistribution/modelDb#N7.1.3>
-      rdf:type owl:NamedIndividual ;
-      sysML:hasPort <http://example.org/orionPowerDistribution/modelDb#P10.3> , <http://example.org/orionPowerDistribution/modelDb#P9.3> ;
-      sysML:hasType model:S3_RPC1 ;
+      rdf:type sysML:ComponentBlock ;
+      sysML:hasPort <http://example.org/orionPowerDistribution/modelDb#P9.3> , <http://example.org/orionPowerDistribution/modelDb#P10.3> ;
+      sysML:hasType model:S3_RPC3 ;
       sysML:inDiagram model:D5 .
 
 <http://example.org/orionPowerDistribution/modelDb#N7.1.4>
-      rdf:type owl:NamedIndividual ;
-      sysML:hasPort <http://example.org/orionPowerDistribution/modelDb#P10.4> , <http://example.org/orionPowerDistribution/modelDb#P9.4> ;
-      sysML:hasType model:S3_RPC1 ;
+      rdf:type sysML:ComponentBlock ;
+      sysML:hasPort <http://example.org/orionPowerDistribution/modelDb#P9.4> , <http://example.org/orionPowerDistribution/modelDb#P10.4> ;
+      sysML:hasType model:S3_RPC4 ;
       sysML:inDiagram model:D5 .
 
 model:N8
-      rdf:type sysML:ComponentBlock , owl:NamedIndividual ;
+      rdf:type owl:NamedIndividual , sysML:ComponentBlock ;
       rdfs:label "S1_Load" ;
       sysML:definesType model:S1_Load ;
       sysML:inDiagram model:D1 ;
@@ -661,48 +661,48 @@ model:N8
       sysML:isPartOf model:N1 .
 
 <http://example.org/orionPowerDistribution/modelDb#N8.1>
-      rdf:type owl:NamedIndividual ;
+      rdf:type sysML:ComponentBlock ;
       sysML:hasPort model:P7 ;
       sysML:hasType model:S1_Load ;
       sysML:inDiagram model:D4 .
 
 model:N9
-      rdf:type sysML:ComponentBlock , owl:NamedIndividual ;
+      rdf:type owl:NamedIndividual , sysML:ComponentBlock ;
       rdfs:label "Load" ;
       sysML:inDiagram model:D1 .
 
 <http://example.org/orionPowerDistribution/modelDb#N9.1>
-      rdf:type owl:NamedIndividual ;
+      rdf:type sysML:ComponentBlock ;
       sysML:hasPort model:P11 ;
       sysML:hasType model:S2_Load ;
       sysML:inDiagram model:D5 .
 
 <http://example.org/orionPowerDistribution/modelDb#N9.1.1>
-      rdf:type owl:NamedIndividual ;
+      rdf:type sysML:ComponentBlock ;
       sysML:hasPort <http://example.org/orionPowerDistribution/modelDb#P11.1> ;
       sysML:hasType model:S3_Load ;
       sysML:inDiagram model:D5 .
 
 <http://example.org/orionPowerDistribution/modelDb#N9.1.2>
-      rdf:type owl:NamedIndividual ;
+      rdf:type sysML:ComponentBlock ;
       sysML:hasPort <http://example.org/orionPowerDistribution/modelDb#P11.2> ;
       sysML:hasType model:S3_Load ;
       sysML:inDiagram model:D5 .
 
 <http://example.org/orionPowerDistribution/modelDb#N9.1.3>
-      rdf:type owl:NamedIndividual ;
+      rdf:type sysML:ComponentBlock ;
       sysML:hasPort <http://example.org/orionPowerDistribution/modelDb#P11.3> ;
       sysML:hasType model:S3_Load ;
       sysML:inDiagram model:D5 .
 
 <http://example.org/orionPowerDistribution/modelDb#N9.1.4>
-      rdf:type owl:NamedIndividual ;
+      rdf:type sysML:ComponentBlock ;
       sysML:hasPort <http://example.org/orionPowerDistribution/modelDb#P11.4> ;
       sysML:hasType model:S3_Load ;
       sysML:inDiagram model:D5 .
 
 model:P10
-      rdf:type sysML:Port , owl:NamedIndividual ;
+      rdf:type owl:NamedIndividual , sysML:Port ;
       rdfs:label "S2_RPC_Out" ;
       sysML:hasDirection sysML:Output ;
       sysML:hasType qudv:A ;
@@ -713,7 +713,7 @@ model:P10
       rdf:type sysML:Port .
 
 <http://example.org/orionPowerDistribution/modelDb#P10.1.1>
-      rdf:type sysML:Port , owl:NamedIndividual ;
+      rdf:type owl:NamedIndividual , sysML:Port ;
       rdfs:label "S3_RPC_Out_1" ;
       sysML:hasDirection sysML:Output ;
       sysML:hasType qudv:A ;
@@ -721,7 +721,7 @@ model:P10
       sysML:isService "true"^^xsd:boolean .
 
 <http://example.org/orionPowerDistribution/modelDb#P10.1.2>
-      rdf:type sysML:Port , owl:NamedIndividual ;
+      rdf:type owl:NamedIndividual , sysML:Port ;
       rdfs:label "S3_RPC_Out_2" ;
       sysML:hasDirection sysML:Output ;
       sysML:hasType qudv:A ;
@@ -729,7 +729,7 @@ model:P10
       sysML:isService "true"^^xsd:boolean .
 
 <http://example.org/orionPowerDistribution/modelDb#P10.1.3>
-      rdf:type sysML:Port , owl:NamedIndividual ;
+      rdf:type owl:NamedIndividual , sysML:Port ;
       rdfs:label "S3_RPC_Out_3" ;
       sysML:hasDirection sysML:Output ;
       sysML:hasType qudv:A ;
@@ -737,7 +737,7 @@ model:P10
       sysML:isService "true"^^xsd:boolean .
 
 <http://example.org/orionPowerDistribution/modelDb#P10.1.4>
-      rdf:type sysML:Port , owl:NamedIndividual ;
+      rdf:type owl:NamedIndividual , sysML:Port ;
       rdfs:label "S3_RPC_Out_4" ;
       sysML:hasDirection sysML:Output ;
       sysML:hasType qudv:A ;
@@ -754,7 +754,7 @@ model:P10
       rdf:type sysML:Port .
 
 model:P11
-      rdf:type sysML:Port , owl:NamedIndividual ;
+      rdf:type owl:NamedIndividual , sysML:Port ;
       rdfs:label "S2_Load_In" ;
       sysML:hasDirection sysML:Input ;
       sysML:hasType qudv:A ;
@@ -764,28 +764,28 @@ model:P11
       rdf:type sysML:Port .
 
 <http://example.org/orionPowerDistribution/modelDb#P11.1.1>
-      rdf:type sysML:Port , owl:NamedIndividual ;
+      rdf:type owl:NamedIndividual , sysML:Port ;
       rdfs:label "S3_Load_In_1" ;
       sysML:hasDirection sysML:Input ;
       sysML:hasType qudv:A ;
       sysML:hasVisibility sysML:Public .
 
 <http://example.org/orionPowerDistribution/modelDb#P11.1.2>
-      rdf:type sysML:Port , owl:NamedIndividual ;
+      rdf:type owl:NamedIndividual , sysML:Port ;
       rdfs:label "S3_Load_In_2" ;
       sysML:hasDirection sysML:Input ;
       sysML:hasType qudv:A ;
       sysML:hasVisibility sysML:Public .
 
 <http://example.org/orionPowerDistribution/modelDb#P11.1.3>
-      rdf:type sysML:Port , owl:NamedIndividual ;
+      rdf:type owl:NamedIndividual , sysML:Port ;
       rdfs:label "S3_Load_In_3" ;
       sysML:hasDirection sysML:Input ;
       sysML:hasType qudv:A ;
       sysML:hasVisibility sysML:Public .
 
 <http://example.org/orionPowerDistribution/modelDb#P11.1.4>
-      rdf:type sysML:Port , owl:NamedIndividual ;
+      rdf:type owl:NamedIndividual , sysML:Port ;
       rdfs:label "S3_Load_In_4" ;
       sysML:hasDirection sysML:Input ;
       sysML:hasType qudv:A ;
@@ -801,7 +801,7 @@ model:P11
       rdf:type sysML:Port .
 
 model:P4
-      rdf:type sysML:Port , owl:NamedIndividual ;
+      rdf:type owl:NamedIndividual , sysML:Port ;
       rdfs:label "S1_Converter_Out" ;
       sysML:hasDirection sysML:Output ;
       sysML:hasType qudv:A ;
@@ -809,7 +809,7 @@ model:P4
       sysML:isService "true"^^xsd:boolean .
 
 model:P5
-      rdf:type sysML:Port , owl:NamedIndividual ;
+      rdf:type owl:NamedIndividual , sysML:Port ;
       rdfs:label "S1_RPC_In" ;
       sysML:hasDirection sysML:Input ;
       sysML:hasType qudv:W ;
@@ -817,7 +817,7 @@ model:P5
       sysML:isService "true"^^xsd:boolean .
 
 model:P6
-      rdf:type sysML:Port , owl:NamedIndividual ;
+      rdf:type owl:NamedIndividual , sysML:Port ;
       rdfs:label "S1_RPC_Out" ;
       sysML:hasDirection sysML:Output ;
       sysML:hasType qudv:A ;
@@ -825,14 +825,14 @@ model:P6
       sysML:isService "true"^^xsd:boolean .
 
 model:P7
-      rdf:type sysML:Port , owl:NamedIndividual ;
+      rdf:type owl:NamedIndividual , sysML:Port ;
       rdfs:label "S1_Load_In" ;
       sysML:hasDirection sysML:Input ;
       sysML:hasType qudv:A ;
       sysML:hasVisibility sysML:Public .
 
 model:P8
-      rdf:type sysML:Port , owl:NamedIndividual ;
+      rdf:type owl:NamedIndividual , sysML:Port ;
       rdfs:label "S2_Converter_Out" ;
       sysML:hasDirection sysML:Output ;
       sysML:hasType qudv:A ;
@@ -840,7 +840,7 @@ model:P8
       sysML:isService "true"^^xsd:boolean .
 
 <http://example.org/orionPowerDistribution/modelDb#P8.1>
-      rdf:type sysML:Port , owl:NamedIndividual ;
+      rdf:type owl:NamedIndividual , sysML:Port ;
       rdfs:label "S3_Converter_Out" ;
       sysML:hasDirection sysML:Output ;
       sysML:hasType qudv:A ;
@@ -848,7 +848,7 @@ model:P8
       sysML:isService "true"^^xsd:boolean .
 
 model:P9
-      rdf:type sysML:Port , owl:NamedIndividual ;
+      rdf:type owl:NamedIndividual , sysML:Port ;
       rdfs:label "S2_RPC_In" ;
       sysML:hasDirection sysML:Input ;
       sysML:hasType qudv:W ;
@@ -859,7 +859,7 @@ model:P9
       rdf:type sysML:Port .
 
 <http://example.org/orionPowerDistribution/modelDb#P9.1.1>
-      rdf:type sysML:Port , owl:NamedIndividual ;
+      rdf:type owl:NamedIndividual , sysML:Port ;
       rdfs:label "S3_RPC_In_1" ;
       sysML:hasDirection sysML:Input ;
       sysML:hasType qudv:W ;
@@ -867,7 +867,7 @@ model:P9
       sysML:isService "true"^^xsd:boolean .
 
 <http://example.org/orionPowerDistribution/modelDb#P9.1.2>
-      rdf:type sysML:Port , owl:NamedIndividual ;
+      rdf:type owl:NamedIndividual , sysML:Port ;
       rdfs:label "S3_RPC_In_2" ;
       sysML:hasDirection sysML:Input ;
       sysML:hasType qudv:W ;
@@ -875,7 +875,7 @@ model:P9
       sysML:isService "true"^^xsd:boolean .
 
 <http://example.org/orionPowerDistribution/modelDb#P9.1.3>
-      rdf:type sysML:Port , owl:NamedIndividual ;
+      rdf:type owl:NamedIndividual , sysML:Port ;
       rdfs:label "S3_RPC_In_3" ;
       sysML:hasDirection sysML:Input ;
       sysML:hasType qudv:W ;
@@ -883,7 +883,7 @@ model:P9
       sysML:isService "true"^^xsd:boolean .
 
 <http://example.org/orionPowerDistribution/modelDb#P9.1.4>
-      rdf:type sysML:Port , owl:NamedIndividual ;
+      rdf:type owl:NamedIndividual , sysML:Port ;
       rdfs:label "S3_RPC_In_4" ;
       sysML:hasDirection sysML:Input ;
       sysML:hasType qudv:W ;
@@ -900,55 +900,55 @@ model:P9
       rdf:type sysML:Port .
 
 model:S1_Load
-      rdf:type owl:NamedIndividual .
+      rdf:type sysML:SysMLComponentBlockType .
 
 model:S1_RPC
-      rdf:type owl:NamedIndividual .
+      rdf:type sysML:SysMLComponentBlockType .
 
 model:S1_RPC1
-      rdf:type owl:NamedIndividual .
+      rdf:type sysML:SysMLComponentBlockType .
 
 model:S1_Source
-      rdf:type owl:NamedIndividual .
+      rdf:type sysML:SysMLComponentBlockType .
 
 model:S2_Load
-      rdf:type owl:NamedIndividual .
+      rdf:type sysML:SysMLComponentBlockType .
 
 model:S2_RPC
-      rdf:type owl:NamedIndividual .
+      rdf:type sysML:SysMLComponentBlockType .
 
 model:S2_RPC1
-      rdf:type owl:NamedIndividual .
+      rdf:type sysML:SysMLComponentBlockType .
 
 model:S2_Source
-      rdf:type owl:NamedIndividual .
+      rdf:type sysML:SysMLComponentBlockType .
 
 model:S3_Load
-      rdf:type owl:NamedIndividual .
+      rdf:type sysML:SysMLComponentBlockType .
 
 model:S3_Load_1
-      rdf:type owl:NamedIndividual .
+      rdf:type sysML:SysMLComponentBlockType .
 
 model:S3_Load_2
-      rdf:type owl:NamedIndividual .
+      rdf:type sysML:SysMLComponentBlockType .
 
 model:S3_Load_3
-      rdf:type owl:NamedIndividual .
+      rdf:type sysML:SysMLComponentBlockType .
 
 model:S3_Load_4
-      rdf:type owl:NamedIndividual .
+      rdf:type sysML:SysMLComponentBlockType .
 
 model:S3_RPC1
-      rdf:type owl:NamedIndividual .
+      rdf:type sysML:SysMLComponentBlockType .
 
 model:S3_RPC2
-      rdf:type owl:NamedIndividual .
+      rdf:type sysML:SysMLComponentBlockType .
 
 model:S3_RPC3
-      rdf:type owl:NamedIndividual .
+      rdf:type sysML:SysMLComponentBlockType .
 
 model:S3_RPC4
-      rdf:type owl:NamedIndividual .
+      rdf:type sysML:SysMLComponentBlockType .
 
 model:S3_Source
-      rdf:type owl:NamedIndividual .
+      rdf:type sysML:SysMLComponentBlockType .

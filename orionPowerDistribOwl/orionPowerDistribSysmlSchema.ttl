@@ -65,6 +65,16 @@ sysML:SubSystem
       rdf:type owl:Class ;
       rdfs:comment "A sysML subsystem." .
 
+sysML:SysMLComponentBlockType
+      rdf:type owl:Class ;
+      rdfs:label "Sys MLComponent block type"^^xsd:string ;
+      rdfs:subClassOf sysML:SysMLType .
+
+sysML:SysMLType
+      rdf:type owl:Class ;
+      rdfs:label "Sys MLType"^^xsd:string ;
+      rdfs:subClassOf owl:Thing .
+
 sysML:Visibility
       rdf:type owl:Class ;
       rdfs:comment "The sysML visibility attribute, indicating public or private." .
