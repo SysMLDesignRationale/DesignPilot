@@ -2,91 +2,81 @@
 # imports: http://example.org/orionPowerDistribution/lessonSchema
 # imports: http://example.org/orionPowerDistribution/simDb
 
-@prefix :        <http://example.org/orionPowerDistribution/lessonDb#> .
-@prefix lessonDb:  <http://example.org/orionPowerDistribution/lessonDb#> .
-@prefix lessonSchema:  <http://example.org/orionPowerDistribution/lessonSchema#> .
-@prefix model:   <http://example.org/orionPowerDistribution/modelDb#> .
-@prefix owl:     <http://www.w3.org/2002/07/owl#> .
-@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix simDb:   <http://example.org/orionPowerDistribution/simDb#> .
-@prefix simSchema:  <http://example.org/orionPowerDistribution/simSchema#> .
-@prefix sysML:   <http://example.org/orionPowerDistribution/sysmlSchema#> .
-@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
-
+# c14n-version: 3
+@prefix : <http://example.org/orionPowerDistribution/lessonDb#> .
+@prefix lessonDb: <http://example.org/orionPowerDistribution/lessonDb#> .
+@prefix lessonSchema: <http://example.org/orionPowerDistribution/lessonSchema#> .
+@prefix model: <http://example.org/orionPowerDistribution/modelDb#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix simDb: <http://example.org/orionPowerDistribution/simDb#> .
+@prefix simSchema: <http://example.org/orionPowerDistribution/simSchema#> .
+@prefix sysML: <http://example.org/orionPowerDistribution/sysmlSchema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 <http://example.org/orionPowerDistribution/lessonDb>
-      rdf:type owl:Ontology ;
-      owl:imports <http://example.org/orionPowerDistribution/lessonSchema> , <http://example.org/orionPowerDistribution/simDb> .
-
+  rdf:type owl:Ontology ;
+  owl:imports <http://example.org/orionPowerDistribution/lessonSchema> ;
+  owl:imports <http://example.org/orionPowerDistribution/simDb> ;
+.
 lessonDb:Constr1
-      rdf:type lessonSchema:Constraint ;
-      lessonSchema:hasStatement
-              lessonDb:Statement1 .
-
+  rdf:type lessonSchema:Constraint ;
+  lessonSchema:hasStatement lessonDb:Statement1 ;
+.
 lessonDb:Over1
-      rdf:type lessonSchema:ConstraintOverride ;
-      rdfs:comment "This would be entered by the designer when informed of the constraint violation." ;
-      lessonSchema:hasRationale
-              lessonDb:Rat1 ;
-      lessonSchema:overrides
-              lessonDb:Viol1 .
-
+  rdf:type lessonSchema:ConstraintOverride ;
+  lessonSchema:hasRationale lessonDb:Rat1 ;
+  lessonSchema:overrides lessonDb:Viol1 ;
+  rdfs:comment "This would be entered by the designer when informed of the constraint violation." ;
+.
 lessonDb:Rat1
-      rdf:type lessonSchema:Rationale ;
-      rdfs:comment "This would be entered by the designer when the system prompts her/him to justify the override." ;
-      lessonSchema:hasReplacement
-              lessonDb:Repl1 , lessonDb:Repl2 , lessonDb:Repl3 , lessonDb:Repl4 ;
-      lessonSchema:hasType
-              lessonSchema:RationaleType1 .
-
+  rdf:type lessonSchema:Rationale ;
+  lessonSchema:hasReplacement lessonDb:Repl1 ;
+  lessonSchema:hasReplacement lessonDb:Repl2 ;
+  lessonSchema:hasReplacement lessonDb:Repl3 ;
+  lessonSchema:hasReplacement lessonDb:Repl4 ;
+  lessonSchema:hasType lessonSchema:RationaleType1 ;
+  rdfs:comment "This would be entered by the designer when the system prompts her/him to justify the override." ;
+.
 lessonDb:Repl1
-      rdf:type lessonSchema:Replacement ;
-      lessonSchema:replacesThis
-              simDb:AS11 ;
-      lessonSchema:replacesWith
-              simDb:AS21 .
-
+  rdf:type lessonSchema:Replacement ;
+  lessonSchema:replacesThis simDb:AS11 ;
+  lessonSchema:replacesWith simDb:AS21 ;
+.
 lessonDb:Repl2
-      rdf:type lessonSchema:Replacement ;
-      lessonSchema:replacesThis
-              simDb:AS12 ;
-      lessonSchema:replacesWith
-              simDb:AS22 .
-
+  rdf:type lessonSchema:Replacement ;
+  lessonSchema:replacesThis simDb:AS12 ;
+  lessonSchema:replacesWith simDb:AS22 ;
+.
 lessonDb:Repl3
-      rdf:type lessonSchema:Replacement ;
-      lessonSchema:replacesThis
-              simDb:AS13 ;
-      lessonSchema:replacesWith
-              simDb:AS23 .
-
+  rdf:type lessonSchema:Replacement ;
+  lessonSchema:replacesThis simDb:AS13 ;
+  lessonSchema:replacesWith simDb:AS23 ;
+.
 lessonDb:Repl4
-      rdf:type lessonSchema:Replacement ;
-      lessonSchema:replacesThis
-              simDb:AS14 ;
-      lessonSchema:replacesWith
-              simDb:AS24 .
-
+  rdf:type lessonSchema:Replacement ;
+  lessonSchema:replacesThis simDb:AS14 ;
+  lessonSchema:replacesWith simDb:AS24 ;
+.
 lessonDb:Statement1
-      rdf:type rdf:Statement ;
-      rdf:object "55"^^xsd:float ;
-      rdf:predicate sysML:hasDefaultValue ;
-      rdf:subject model:A4 .
-
+  rdf:type rdf:Statement ;
+  rdf:object "55"^^xsd:float ;
+  rdf:predicate sysML:hasDefaultValue ;
+  rdf:subject model:A4 ;
+.
 lessonDb:Statement2
-      rdf:type rdf:Statement ;
-      rdf:object "125.44"^^xsd:float ;
-      rdf:predicate sysML:hasInferredValue ;
-      rdf:subject model:A4 .
-
+  rdf:type rdf:Statement ;
+  rdf:object "125.44"^^xsd:float ;
+  rdf:predicate sysML:hasInferredValue ;
+  rdf:subject model:A4 ;
+.
 lessonDb:Vio1
-      rdfs:comment "This would be discovered by the simulation engine." .
-
+  rdfs:comment "This would be discovered by the simulation engine." ;
+.
 lessonDb:Viol1
-      rdf:type lessonSchema:ConstraintViolation ;
-      lessonSchema:hasLevel
-              lessonSchema:Warning ;
-      lessonSchema:hasStatement
-              lessonDb:Statement2 ;
-      lessonSchema:violatesConstraint
-              lessonDb:Constr1 .
+  rdf:type lessonSchema:ConstraintViolation ;
+  lessonSchema:hasLevel lessonSchema:Warning ;
+  lessonSchema:hasStatement lessonDb:Statement2 ;
+  lessonSchema:violatesConstraint lessonDb:Constr1 ;
+  rdfs:label "Violation 1: Default power doesn't match inferred power on DC converter"^^xsd:string ;
+.
