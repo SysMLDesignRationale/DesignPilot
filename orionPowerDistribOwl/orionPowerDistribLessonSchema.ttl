@@ -1,138 +1,139 @@
 # baseURI: http://example.org/orionPowerDistribution/lessonSchema
 # imports: http://example.org/orionPowerDistribution/simSchema
 
-@prefix :        <http://example.org/orionPowerDistribution/lessonSchema#> .
-@prefix lessonSchema:  <http://example.org/orionPowerDistribution/lessonSchema#> .
-@prefix owl:     <http://www.w3.org/2002/07/owl#> .
-@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix xml:     <http://www.w3.org/XML/1998/namespace> .
-@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
-
+# c14n-version: 3
+@prefix : <http://example.org/orionPowerDistribution/lessonSchema#> .
+@prefix lessonSchema: <http://example.org/orionPowerDistribution/lessonSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 <http://example.org/orionPowerDistribution/lessonSchema>
-      rdf:type owl:Ontology ;
-      owl:imports <http://example.org/orionPowerDistribution/simSchema> .
-
+  rdf:type owl:Ontology ;
+  owl:imports <http://example.org/orionPowerDistribution/simSchema> ;
+.
 lessonSchema:Constraint
-      rdf:type owl:Class ;
-      rdfs:comment "A constraint, represented as a set of RDF statements which must be true for the constraint to be met." ;
-      rdfs:subClassOf
-              [ rdf:type owl:Restriction ;
-                owl:allValuesFrom rdf:Statement ;
-                owl:onProperty lessonSchema:hasStatement
-              ] .
-
+  rdf:type owl:Class ;
+  rdfs:comment "A constraint, represented as a set of RDF statements which must be true for the constraint to be met." ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom rdf:Statement ;
+      owl:onProperty lessonSchema:hasStatement ;
+    ] ;
+.
 lessonSchema:ConstraintOverride
-      rdf:type owl:Class ;
-      rdfs:comment "Represents a designer's decision to override a constraint violation, i.e., to accept the design despite the constraint violation. It refers to the constraint violation and to a rationale for the override." ;
-      rdfs:subClassOf
-              [ rdf:type owl:Restriction ;
-                owl:allValuesFrom lessonSchema:ConstraintViolation ;
-                owl:onProperty lessonSchema:overrides
-              ] ;
-      rdfs:subClassOf
-              [ rdf:type owl:Restriction ;
-                owl:allValuesFrom lessonSchema:Rationale ;
-                owl:onProperty lessonSchema:hasRationale
-              ] .
-
+  rdf:type owl:Class ;
+  rdfs:comment "Represents a designer's decision to override a constraint violation, i.e., to accept the design despite the constraint violation. It refers to the constraint violation and to a rationale for the override." ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom lessonSchema:ConstraintViolation ;
+      owl:onProperty lessonSchema:overrides ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom lessonSchema:Rationale ;
+      owl:onProperty lessonSchema:hasRationale ;
+    ] ;
+.
 lessonSchema:ConstraintViolation
-      rdf:type owl:Class ;
-      rdfs:comment "A violation of a constraint, as discovered by a simulation engine or design analyzer. It refers to the constraint that is violated, and to the asserted or inferred statements that contradict the constraint's statements. It also has a severity level." ;
-      rdfs:subClassOf
-              [ rdf:type owl:Restriction ;
-                owl:allValuesFrom rdf:Statement ;
-                owl:onProperty lessonSchema:hasStatement
-              ] ;
-      rdfs:subClassOf
-              [ rdf:type owl:Restriction ;
-                owl:allValuesFrom lessonSchema:Constraint ;
-                owl:onProperty lessonSchema:violatesConstraint
-              ] ;
-      rdfs:subClassOf
-              [ rdf:type owl:Restriction ;
-                owl:allValuesFrom lessonSchema:ViolationLevel ;
-                owl:onProperty lessonSchema:hasLevel
-              ] .
-
+  rdf:type owl:Class ;
+  rdfs:comment "A violation of a constraint, as discovered by a simulation engine or design analyzer. It refers to the constraint that is violated, and to the asserted or inferred statements that contradict the constraint's statements. It also has a severity level." ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom lessonSchema:Constraint ;
+      owl:onProperty lessonSchema:violatesConstraint ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom lessonSchema:ViolationLevel ;
+      owl:onProperty lessonSchema:hasLevel ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom rdf:Statement ;
+      owl:onProperty lessonSchema:hasStatement ;
+    ] ;
+.
 lessonSchema:Rationale
-      rdf:type owl:Class ;
-      rdfs:comment "A rationale for a design decision. In particular, we can use these to justify overriding a constraint." ;
-      rdfs:subClassOf
-              [ rdf:type owl:Restriction ;
-                owl:allValuesFrom lessonSchema:RationaleType ;
-                owl:onProperty lessonSchema:hasType
-              ] .
-
+  rdf:type owl:Class ;
+  rdfs:comment "A rationale for a design decision. In particular, we can use these to justify overriding a constraint." ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom lessonSchema:RationaleType ;
+      owl:onProperty lessonSchema:hasType ;
+    ] ;
+.
 lessonSchema:RationaleType
-      rdf:type owl:Class ;
-      rdfs:comment """A recognized kind of rationale. 
+  rdf:type owl:Class ;
+  rdfs:comment """A recognized kind of rationale. 
 
 For starters, we have only one of these, namely, \"Actual values will differ,\" which means that the values used by a simulation engine to produce a constraint violation will not occur in practice.""" ;
-      rdfs:label "Rationale type"^^xsd:string ;
-      rdfs:subClassOf owl:Thing .
-
+  rdfs:label "Rationale type"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+.
 lessonSchema:RationaleType1
-      rdf:type lessonSchema:RationaleType ;
-      rdfs:label "Actual values will differ" .
-
+  rdf:type lessonSchema:RationaleType ;
+  rdfs:label "Actual values will differ" ;
+.
 lessonSchema:Replacement
-      rdf:type owl:Class ;
-      rdfs:comment """A replacement of one attribute set with another. 
+  rdf:type owl:Class ;
+  rdfs:comment """A replacement of one attribute set with another. 
 
 This can be used as part of a rationale of the type \"Actual values will differ\", to document the attributes that will, in practice, determine a particular attribute value -- as opposed to those the simlulation engine uses by default.""" ;
-      rdfs:subClassOf
-              [ rdf:type owl:Restriction ;
-                owl:allValuesFrom <http://example.org/orionPowerDistribution/simSchema#AttributeSet> ;
-                owl:onProperty lessonSchema:replacesWith
-              ] ;
-      rdfs:subClassOf
-              [ rdf:type owl:Restriction ;
-                owl:allValuesFrom <http://example.org/orionPowerDistribution/simSchema#AttributeSet> ;
-                owl:onProperty lessonSchema:replacesThis
-              ] .
-
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom <http://example.org/orionPowerDistribution/simSchema#AttributeSet> ;
+      owl:onProperty lessonSchema:replacesThis ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom <http://example.org/orionPowerDistribution/simSchema#AttributeSet> ;
+      owl:onProperty lessonSchema:replacesWith ;
+    ] ;
+.
 lessonSchema:ViolationLevel
-      rdf:type owl:Class ;
-      rdfs:label "Lesson schema"^^xsd:string ;
-      rdfs:subClassOf owl:Thing .
-
+  rdf:type owl:Class ;
+  rdfs:label "Violation Level"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+.
 lessonSchema:Warning
-      rdf:type lessonSchema:ViolationLevel ;
-      rdfs:label "Warning"^^xsd:string .
-
+  rdf:type lessonSchema:ViolationLevel ;
+  rdfs:label "Warning"^^xsd:string ;
+.
 lessonSchema:hasActualValue
-      rdf:type owl:ObjectProperty .
-
+  rdf:type owl:ObjectProperty ;
+.
 lessonSchema:hasLevel
-      rdf:type owl:ObjectProperty .
-
+  rdf:type owl:ObjectProperty ;
+.
 lessonSchema:hasRationale
-      rdf:type owl:ObjectProperty .
-
+  rdf:type owl:ObjectProperty ;
+.
 lessonSchema:hasReplacement
-      rdf:type owl:ObjectProperty .
-
+  rdf:type owl:ObjectProperty ;
+.
 lessonSchema:hasStatement
-      rdf:type owl:ObjectProperty .
-
+  rdf:type owl:ObjectProperty ;
+.
 lessonSchema:hasType
-      rdf:type owl:ObjectProperty .
-
+  rdf:type owl:ObjectProperty ;
+.
 lessonSchema:overrides
-      rdf:type owl:ObjectProperty .
-
+  rdf:type owl:ObjectProperty ;
+.
 lessonSchema:replacesThis
-      rdf:type owl:ObjectProperty .
-
+  rdf:type owl:ObjectProperty ;
+.
 lessonSchema:replacesWith
-      rdf:type owl:ObjectProperty .
-
+  rdf:type owl:ObjectProperty ;
+.
 lessonSchema:violatesConstraint
-      rdf:type owl:ObjectProperty .
-
+  rdf:type owl:ObjectProperty ;
+.
 rdf:Statement
-      rdf:type owl:Class .
-
+  rdf:type owl:Class ;
+.
 rdf:object
-      rdf:type owl:AnnotationProperty .
+  rdf:type owl:AnnotationProperty ;
+.
