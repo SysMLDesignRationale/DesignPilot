@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin
+	id="gov.nasa.jsc.mdrules"
+	name="Rules Engine"
+	version="0.1"
+	internalVersion="0000001"
+	ownClassloader="false"
+	class-lookup="GlobalFirst"
+	provider-name="Knowledge Evolution"
+	class="gov.nasa.jsc.mdrules.run.Run">
+
+	<requires>
+		<api version="1.0"/>
+
+	</requires>
+
+	<runtime>
+		<library name="mdrules.jar"/>	
+		<library name="commons-io-2.4.jar"/>	
+		<library name="openrdf-sesame-2.7.11-onejar.jar"/>	
+	</runtime>
+	
+	<!-- 
+	<help path="help.jar" name="help.hs"/> 
+	-->
+	
+
+</plugin>
