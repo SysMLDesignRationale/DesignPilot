@@ -17,7 +17,7 @@
 	<runtime>
 		<library name="mdrules.jar"/>	
 		<library name="commons-io-2.4.jar"/>	
-		<library name="openrdf-sesame-2.7.11-onejar.jar"/>	
+		<library name="openrdf-sesame-2.7.13-onejar.jar"/>	
 	</runtime>
 	
 	<!-- 
